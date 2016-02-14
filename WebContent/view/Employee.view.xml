@@ -1,0 +1,57 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.Employee"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form" displayBlock="true" xmlns:core="sap.ui.core">
+	<Page title="Employee">
+
+		<core:Fragment fragmentName="sap.ui.demo.myFiori.view.BusyDialog"
+			type="XML">
+		</core:Fragment>
+		<!--EDİTABLE TRUE OLMALI Kİ TEXTALİGN (horizantal ayarlama yapar) ÇALIŞSIN -->
+		<f:SimpleForm id="formid" minWidth="1024"
+			maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+			labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+			columnsM="1">
+			<f:content>
+				<core:Title text="" />
+				<Label text="Employee id" visible="false" />
+				<Text text="{EmployeeID}" id="labelid" visible="false" />
+				<Label text="Name" textAlign="Center" />
+				<Text text="{TitleOfCourtesy} {FirstName} {LastName}" />
+				<Label text="Title" />
+				<Text text="{Title}" />
+				<Label text="Address" />
+				<Text text="{Address}" />
+				<Label text="City" />
+				<Text text="{City}" />
+				<Label id="RegionLabelid" text="Region" />
+				<Text id="Regionid" text="{Region}" />
+
+				<core:Title text="" />
+				
+				<IconTabBar  height="100%"
+                    width="100%" expanded="false">
+					<items>
+						<IconTabFilter icon="sap-icon://down">
+							<form:SimpleForm id="SupplierForm" minWidth="1024"  >
+								<core:Title text="" />
+								<Label text="PostalCode" />
+								<Text text="{PostalCode}" />
+								<Label text="Country" />
+								<Text text="{Country}" />
+								<Label text="HomePhone" />
+								<Text text="{HomePhone}" />
+							</form:SimpleForm>
+						</IconTabFilter>
+					</items>
+				</IconTabBar>
+
+
+			</f:content>
+		</f:SimpleForm>
+		<Panel>
+			<Button text="Show Date" press="onPressDateShow" type="Emphasized"></Button>
+		</Panel>
+
+	</Page>
+
+</core:View>

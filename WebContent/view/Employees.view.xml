@@ -1,0 +1,46 @@
+<core:View
+	controllerName="sap.ui.demo.myFiori.view.Employees"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="Employees" >
+		
+<subHeader>
+			<Toolbar>
+				<SearchField
+					liveChange="onSearch"
+					width="100%" />
+					   <Button text="Add Employee" press="onPressEmployee" type="Emphasized"></Button>						  	
+		</Toolbar>      
+		</subHeader>
+	
+		<List
+			id="listid"
+			select="handleListSelect"
+			items="{/Employees}" >
+			<!-- TYPE UNUTMA -->	
+			<ObjectListItem
+				type="Active"  
+				press="handleListItemPress"
+				title="{FirstName} {LastName}" >
+<!-- 				number="{}" -->
+				
+			
+<!-- 				<attributes> -->
+<!-- 					<ObjectAttribute text="Birth Day: { -->
+<!-- 					path:'BirthDate', -->
+<!-- 					formatter: 'sap.ui.demo.myFiori.util.Formatter.date' -->
+<!-- 					}" /> -->
+<!-- 				</attributes> -->
+<!-- 				<firstStatus> -->
+<!-- 					<ObjectStatus -->
+<!-- 						text="{City} {Country}" /> -->
+						
+<!-- 				</firstStatus> -->
+			</ObjectListItem>
+		</List>
+<!-- 				 <core:Fragment fragmentName="sap.ui.demo.myFiori.view.BusyDialog" type="XML"> -->
+<!-- 			</core:Fragment>		 -->
+	</Page>
+	
+</core:View>

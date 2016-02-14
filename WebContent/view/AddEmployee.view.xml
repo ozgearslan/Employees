@@ -1,0 +1,70 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.AddEmployee"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	displayBlock="true" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	<Page title="Add Employee" id="Pageid">
+		<f:SimpleForm minWidth="1024" id="formid"
+			maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+			title="" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+			columnsL="2" columnsM="2" class="editableForm">
+			<f:content>
+				<core:Title text="" />
+
+
+				<Label text="FirstName" class="welcomeIconFade" />
+				<Input value="{FirstName}" id="FirstNameid"></Input>
+
+				<Label text="LastName" class="welcomeIconFade" />
+				<Input value="{LastName}" id="LastNameid"></Input>
+
+				<Label text="City" class="welcomeIconFade" />
+				<Input value="{City}" id="Cityid"></Input>
+
+				<Label text="Country" class="welcomeIconFade" />
+				<Input value="{Country}" id="Countryid"></Input>
+
+				<Label text="Extension" class="welcomeIconFade" />
+				<Select items="{/Employees}" id="selectExtensionId" change="selectChange">
+					<core:Item key="{EmployeeID}" text="{Extension}" />
+				</Select>
+				<Label text="" />
+				<RatingIndicator id="starid" maxValue="5"
+					class="sapUiSmallMarginBottom" value="0" change="ratingChange"
+					visualMode="Half" />
+				<Text textAlign="Left" visiable="false" id="textId" text=""></Text>
+
+				<Label text="HomePhone" class="welcomeIconFade" />
+				<Input type="Number" id="HomePhoneId" maxLength="10" value="{HomePhone}"></Input>
+				<core:Title text="" />
+				<Label text="" />
+				<u:FileUploader id="fileUploader" name="myFileUpload"
+					uploadUrl="upload/" width="200px"
+					tooltip="Upload your file to the 
+				 	local server" change="handleValueChange"
+					uploadComplete="handleUploadComplete" />
+				<Label text="" />
+				<Input id="noteid" placeholder="Notes"></Input>
+				<Label text="" />
+				<ProgressIndicator id="progressid" class="sapUiSmallMarginBottom"
+					percentValue="0" displayValue="0%" showValue="true" state="None" />
+				<Label text="" />
+				<Button text="Upload File" press="handleUploadPress" />
+
+				<Label text="Ekler" id="Eklerid" visible="false" />
+				<Link target="_blank" textAlign="Left" subtle="true" id="labelid"
+					text="" press="handleLinkPress" />
+
+				<Label text="" />
+
+				<Label text="Thousand Seperator" id="denemeid" />
+				<Input text="" id="denemeid2" liveChange="liveChangeInput" />
+
+				<Label text="Custom Input for Numbers" />
+				<Input id="inp" placeholder="enter float number" step="any"
+					liveChange="liveChange"></Input>
+			</f:content>
+		</f:SimpleForm>
+
+		<Button text="Send" press="onSendPress" />
+	</Page>
+
+</core:View>

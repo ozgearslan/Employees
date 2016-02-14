@@ -1,0 +1,31 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.Date"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	displayBlock="true" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+	xmlns:vbm="sap.ui.vbm">
+	<Page title="Date Detail" showNavButton="true" navButtonPress="handleNavButtonPress"
+		id="Pageid">
+
+		<f:SimpleForm id="formid" minWidth="1024"
+			maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+			labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+			columnsM="1">
+			<f:content>
+				<Label text="Employee id" visible="false" />
+				<Text text="{EmployeeID}" visible="false" />
+
+				<Label text="Hire Date" labelFor="DP1" />
+				<DatePicker id="DP1" displayFormat="long"
+					placeholder="{path:'HireDate',
+					formatter: 'sap.ui.demo.myFiori.util.Formatter.date'}"
+					change="handleChange"
+					value="{path:'HireDate', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}"
+
+					class="sapUiSmallMarginBottom" />
+
+
+			</f:content>
+		</f:SimpleForm>
+
+	</Page>
+
+</core:View>

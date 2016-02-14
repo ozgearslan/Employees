@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<title> My App</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+      
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-theme="sap_bluecrystal"
+				data-sap-ui-resourceroots='{
+				"sap.ui.demo.myFiori": "./"
+			}'>
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+		<script>
+		new sap.m.Shell({
+			app : new sap.ui.core.ComponentContainer({
+				name : "sap.ui.demo.myFiori"
+			})
+		}).placeAt("content");
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>
